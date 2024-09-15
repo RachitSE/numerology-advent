@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/numerology-advent/static/css/main.0b55f487.css",
+    "main.js": "/numerology-advent/static/js/main.7e697f8d.js",
+    "static/js/453.4812c585.chunk.js": "/numerology-advent/static/js/453.4812c585.chunk.js",
+    "index.html": "/numerology-advent/index.html",
+    "main.0b55f487.css.map": "/numerology-advent/static/css/main.0b55f487.css.map",
+    "main.7e697f8d.js.map": "/numerology-advent/static/js/main.7e697f8d.js.map",
+    "453.4812c585.chunk.js.map": "/numerology-advent/static/js/453.4812c585.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0b55f487.css",
+    "static/js/main.7e697f8d.js"
+  ]
+}
