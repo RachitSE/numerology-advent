@@ -1,41 +1,49 @@
 // src/components/Navbar.js
 
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import { fadeIn } from '../animations/animationVariants';
-import { Link } from 'react-scroll'; // Import react-scroll for smooth scrolling
+// src/components/Navbar.js
 
-const Navbar = () => {
-  return (
-    <motion.nav
+import React from 'react';
+
+const Navbar = ({ setCurrentPage }) => {
+  <motion.nav
       className="bg-indigo-900 text-white py-4"
       variants={fadeIn}
       initial="initial"
       animate="animate"
       transition={{ duration: 1 }}
-    >
+    > </motion.nav>
+  return (
+    
+    <nav className="bg-indigo-900 text-white py-4">
       <div className="container mx-auto flex justify-between items-center">
         <h1 className="text-2xl font-bold">Numerology & Astrology</h1>
         <ul className="flex space-x-6">
           <li>
-            <Link
-              to="home"
-              smooth={true}
-              duration={500}
+            <button
+              onClick={() => setCurrentPage('home')}
               className="cursor-pointer hover:text-yellow-400"
             >
               Home
-            </Link>
+            </button>
           </li>
           <li>
-            <Link
-              to="about"
-              smooth={true}
-              duration={500}
+            <button
+              onClick={() => setCurrentPage('about')}
               className="cursor-pointer hover:text-yellow-400"
             >
               About
-            </Link>
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => setCurrentPage('aiguru')}
+              className="cursor-pointer hover:text-yellow-400"
+            >
+              AI Guru
+            </button>
           </li>
           <li>
             <a
@@ -49,8 +57,9 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-    </motion.nav>
+    </nav>
   );
 };
 
 export default Navbar;
+

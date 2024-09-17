@@ -39,7 +39,7 @@ const PredictionForm = ({ onFormSubmit }) => {
               required
             />
           </div>
-          <button type="submit" className="w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700 transition duration-300">
+          <button type="submit" className="w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700 transition duration-300" >
             Predict My Future
           </button>
         </form>

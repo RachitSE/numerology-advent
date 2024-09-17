@@ -4,17 +4,19 @@ import LandingPage from './components/LandingPage';
 import PredictionForm from './components/PredictionForm';
 import Results from './components/Results';
 import Footer from './components/Footer';
-import About from './components/About'
+import AIGuru from './components/AIGuru';
+import About from './components/About';
 import {
   calculateLifePath,
   calculateDestinyNumber,
   calculatePersonalityNumber,
   calculateSoulUrgeNumber,
   calculateZodiacSign
-} from './Numerology'; // Import all numerology functions
+} from './Numerology';
 
 function App() {
   const [results, setResults] = useState(null);
+  const [currentPage, setCurrentPage] = useState('home');
 
   const handleFormSubmit = (data) => {
     const lifePathNumber = calculateLifePath(data.dob);
@@ -33,20 +35,30 @@ function App() {
     });
   };
 
-  
+  const renderPage = () => {
+    switch (currentPage) {
+      case 'home':
+        return !results ? (
+          <>
+            <LandingPage />
+            <PredictionForm onFormSubmit={handleFormSubmit} />
+          </>
+        ) : (
+          <Results {...results} />
+        );
+      case 'aiguru':
+        return <AIGuru />;
+      case 'about':
+        return <About />;
+      default:
+        return <LandingPage />;
+    }
+  };
 
   return (
     <div className="App">
-      <Navbar />
-      {!results ? (
-        <>
-          <LandingPage />
-          <PredictionForm onFormSubmit={handleFormSubmit} />
-        </>
-      ) : (
-        <Results {...results} />
-      )}
-      <About />
+      <Navbar setCurrentPage={setCurrentPage} />
+      {renderPage()}
       <Footer />
     </div>
   );
